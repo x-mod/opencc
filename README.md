@@ -62,6 +62,9 @@ func main() {
 
 ## Development Guides
 
+- dictionary - 用来同步 OpenCC 官方的字典
+- addition-dictionary - 用来存放此项目提前修复的字典（高优先级）
+
 采用 `make update:data` 命令可以从 OpenCC 官方仓库更新词典。
 
 ```bash
