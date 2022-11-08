@@ -58,25 +58,3 @@ func TestFinance_s2hk_finance(t *testing.T) {
 	}
 
 }
-
-func assertCases(t *testing.T, cases map[string]string) {
-	t.Helper()
-	cc, _ := opencc.New("s2hk")
-
-	for raw, expected := range cases {
-		out, _ := cc.Convert(raw)
-		if strings.TrimSpace(expected) != strings.TrimSpace(out) {
-			t.Errorf("expected %s, got %s", expected, out)
-		}
-	}
-}
-
-// Special hotfix in this project
-func TestSelfSpecialHotfix(t *testing.T) {
-	cases := map[string]string{
-		"来自于汇丰，以及汇丰银行，汇入的款项": "來自於滙豐，以及滙豐銀行，匯入的款項",
-		"汇业银行集团": "滙業銀行集團",
-	}
-
-	assertCases(t, cases)
-}
