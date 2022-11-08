@@ -60,6 +60,14 @@ func main() {
 - `tw2t.json` Traditional Chinese (Taiwan standard) to Traditional Chinese 臺灣正體到繁體（OpenCC 標準）
 - `s2hk-finance.json` 针对香港市场金融数据，做了特殊补充。
 
+## Development Guides
+
+采用 `make update:data` 命令可以从 OpenCC 官方仓库更新词典。
+
+```bash
+$ make update:data
+```
+
 ## Benchmarks
 
 See [benchmark_test.go](https://github.com/longbridgeapp/opencc/tree/master/tests/benchmark_test.go)
