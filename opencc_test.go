@@ -36,6 +36,7 @@ func TestConvert_s2t(t *testing.T) {
 		`1 厘 2 厘钱`: `1 厘 2 厘錢`,
 		`公厘`:       `公厘`,
 		`厘米`:       `厘米`,
+		`恒大`:       `恒大`,
 	}
 
 	s2t, err := New("s2t")
