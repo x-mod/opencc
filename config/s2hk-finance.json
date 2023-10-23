@@ -26,13 +26,13 @@
     {
       "dict": {
         "type": "ocd2",
-        "file": "HKPhrasesFinance.ocd2"
+        "file": "HKVariants.ocd2"
       }
     },
     {
       "dict": {
         "type": "ocd2",
-        "file": "HKVariants.ocd2"
+        "file": "HKPhrasesFinance.ocd2"
       }
     }
   ]
