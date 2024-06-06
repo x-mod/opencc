@@ -5,11 +5,11 @@ import (
 	"testing"
 )
 
-func assertCases(t *testing.T, cc *OpenCC, cases map[string]string) {
+func assertCases(t *testing.T, s2t *OpenCC, cases map[string]string) {
 	t.Helper()
 
 	for k, v := range cases {
-		str, err := cc.Convert(k)
+		str, err := s2t.Convert(k)
 		if err != nil {
 			t.Error(err)
 		}
@@ -56,6 +56,7 @@ func TestConvert_s2hk_finance(t *testing.T) {
 		"套利交易":     "對沖",
 		"下周开始公开配售": "下週開始公開招股",
 		"户":        "戶",
+		"免佣":       "免佣",
 	}
 
 	s2hk, err := New("s2hk-finance")
@@ -73,7 +74,7 @@ func TestSelfSpecialHotfix(t *testing.T) {
 	cases := map[string]string{
 		"来自于汇丰，以及汇丰银行，汇入的款项": "來自於滙豐，以及滙豐銀行，匯入的款項",
 		"汇业银行集团": "滙業銀行集團",
-		"佣金":     "佣金",
+		"免佣":     "免佣",
 	}
 
 	assertCases(t, cc, cases)
