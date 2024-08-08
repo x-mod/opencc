@@ -22,24 +22,17 @@ func main() {
 	//自然语言处理是人工智能领域中的一个重要方向。
 	//自然語言處理是人工智能領域中的一個重要方向。
 
-	t2jp, err := opencc.New("jp2t")
-	if err != nil {
+	c := opencc.NewConverter()
+	if err := c.Open(); err != nil {
 		log.Fatal(err)
 	}
-	in1 := `保険証`
-	out1, err := t2jp.Convert(in1)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("%s\n%s\n", in1, out1)
 
-	t2s, err := opencc.New("t2s")
-	if err != nil {
-		log.Fatal(err)
+	if s, err := c.JP2S("無事だ"); err == nil {
+		fmt.Println("s => ", s)
 	}
-	out2, err := t2s.Convert(out1)
-	if err != nil {
-		log.Fatal(err)
+
+	if t, err := c.JP2T("無事だ"); err == nil {
+		fmt.Println("t => ", t)
 	}
-	fmt.Printf("%s\n%s\n", out1, out2)
+
 }
