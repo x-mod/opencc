@@ -31,7 +31,7 @@ func defaultDir() string {
 		return `C:\gocc\`
 	}
 	if goPath, ok := os.LookupEnv("GOPATH"); ok {
-		return goPath + "/src/github.com/longbridgeapp/opencc/"
+		return goPath + "/src/github.com/x-mod/opencc/"
 	} else {
 		return `/usr/local/share/gocc/`
 	}
@@ -57,6 +57,7 @@ type OpenCC struct {
 var conversions = map[string]struct{}{
 	"hk2s": {}, "s2hk": {}, "s2t": {}, "s2tw": {}, "s2twp": {},
 	"t2hk": {}, "t2s": {}, "t2tw": {}, "tw2s": {}, "tw2sp": {},
+	"jp2t": {}, "t2jp": {},
 	"s2hk-finance": {},
 }
 
